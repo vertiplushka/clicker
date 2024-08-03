@@ -48,8 +48,6 @@ services:
     container_name: nextjs
     ports:
       - "80:80"
-    depends_on:
-      - strapi
 
   nginx:
     image: nginx:latest

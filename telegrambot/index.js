@@ -7,7 +7,7 @@ bot.on('message', (msg) => {
   bot.sendMessage(chatId, 'ээээ ну каароч', {
     reply_markup: {
       inline_keyboard: [
-        [{text: 'тапать хомячка тут', web_app:{url: 'https:seequeuesi.ru/clicker'}}]
+        [{text: 'тапать хомячка тут', web_app:{url: 'https://seequeuesi.ru/clicker'}}]
       ]
     }
   });

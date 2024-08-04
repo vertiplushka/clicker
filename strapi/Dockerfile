@@ -1,11 +1,6 @@
 # Базовый образ с Node.js и предустановленным Yarn
 FROM node:18
 
-FROM strapi/strapi
-
-# Установите необходимые зависимости
-RUN npm install mysql --save
-
 # Устанавливаем рабочую директорию для приложения
 WORKDIR /app
 

@@ -1,45 +1,13 @@
 version: '3.8'
 
 services:
-  mysql:
-    image: mysql:5.7
-    container_name: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root_password
-      MYSQL_DATABASE: my_database
-      MYSQL_USER: my_user
-      MYSQL_PASSWORD: my_password
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql_data:/var/lib/mysql
-
-  strapi:
-    build:
-      context: ./strapi
-      dockerfile: Dockerfile
-    container_name: strapi
-    environment:
-      DATABASE_CLIENT: mysql
-      DATABASE_HOST: mysql
-      DATABASE_PORT: 3306
-      DATABASE_NAME: my_database
-      DATABASE_USERNAME: my_user
-      DATABASE_PASSWORD: my_password
-    ports:
-      - "1337:1337"
-    depends_on:
-      - mysql
-    volumes:
-      - ./strapi:/srv/app
-
+  
   telegrambot:
     build:
       context: ./telegrambot
       dockerfile: Dockerfile
     container_name: telegrambot
-    depends_on:
-      - strapi
+    
 
   nextjs:
     build:
@@ -48,6 +16,7 @@ services:
     container_name: nextjs
     ports:
       - "3000:3000"
+      
 
   nginx:
     image: nginx:latest

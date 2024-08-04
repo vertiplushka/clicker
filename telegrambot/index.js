@@ -4,10 +4,10 @@ const bot = new TelegramBot(token, { polling: true });
 
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'Received your message', {
+  bot.sendMessage(chatId, 'ээээ ну каароч', {
     reply_markup: {
       inline_keyboard: [
-        [{text: 'Трахни свою жопу', web_app:{url: 'http://26.81.91.14:3000/new'}}]
+        [{text: 'тапать хомячка тут', web_app:{url: 'https:seequeuesi.ru/clicker'}}]
       ]
     }
   });
